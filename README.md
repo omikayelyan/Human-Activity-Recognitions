@@ -96,9 +96,7 @@ The Linear SVM achieved the best generalization performance on the test dataset.
 ## Confusion Matrix — Linear SVM
 
 
-```markdown
 ![Linear SVM Confusion Matrix](assets/svm_linear_confusion.png)
-```
 
 The model shows near-perfect classification for LAYING and strong performance across all walking activities. Most confusion occurs between SITTING and STANDING, which have similar posture patterns.
 
@@ -107,9 +105,8 @@ The model shows near-perfect classification for LAYING and strong performance ac
 ## Logistic Regression Confusion Matrix
 
 
-```markdown
 ![Logistic Regression Confusion Matrix](assets/logistic_confusion.png)
-```
+
 
 Logistic Regression also demonstrates strong performance with minimal class confusion.
 
