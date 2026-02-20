@@ -12,14 +12,9 @@ build/
 venv/
 env/
 
-# OS files
+# macOS
 .DS_Store
 
 # IDEs
 .idea/
 .vscode/
-
-.idea/
-.venv/
-__pycache__/
-.DS_Store
