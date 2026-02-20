@@ -120,7 +120,69 @@ Logistic Regression also demonstrates strong performance with minimal class conf
 - Walking-related classes are classified with high precision and recall.
 
 ---
+## Data Augmentation Strategy
 
+To improve model robustness and ensure consistent feature scaling, an optional data augmentation step was implemented based on **standardization and dataset expansion**.
+
+---
+
+### Feature Standardization
+
+Given a feature vector `x ∈ R^d`, each feature is standardized using:
+
+```
+z = (x - μ) / σ
+```
+
+where:
+
+- `μ` = mean of the feature computed from the training set  
+- `σ` = standard deviation of the feature computed from the training set  
+- `z` = standardized feature value  
+
+Standardization ensures that all features have zero mean and unit variance.
+
+This is particularly important for models such as:
+
+- Support Vector Machines (SVM)
+- Logistic Regression
+
+because these models are sensitive to feature scale.
+
+---
+
+### Dataset Expansion
+
+After scaling, the standardized version of the training dataset is concatenated with the original training data:
+
+```
+X' = [ X
+      Scale(X)]
+
+y' = [ y
+       y ]
+```
+
+This effectively doubles the size of the training dataset while keeping the labels unchanged.
+
+As a result:
+
+- The model is trained on both original and scaled representations
+- Feature magnitude bias is reduced
+- Optimization becomes more stable
+- Generalization performance may improve
+
+### Why This Approach Was Used
+
+The Human Activity Recognition dataset contains high-dimensional engineered features (561 features), many of which vary significantly in scale.
+
+By standardizing and expanding the dataset:
+
+- Models become less sensitive to feature magnitude differences
+- Optimization becomes more stable
+- Decision boundaries generalize better across feature space
+
+This augmentation strategy is lightweight but effective for classical machine learning models.
 ## How to Run
 
 ### 1️⃣ Clone the repository
