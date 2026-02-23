@@ -410,7 +410,7 @@ $$
 #### 1) Accuracy (Train + Test)
 
 $$
-\text{Accuracy} = \frac{\left|\{\,i : \hat{y}_i = y_i\,\}\right|}{n}
+\mathrm{Accuracy}=\frac{1}{n}\sum_{i=1}^{n}\mathbf{1}\!\left[\hat{y}_i=y_i\right]
 $$
 
 ---
@@ -452,9 +452,10 @@ $$
 The confusion matrix $C$ is computed as:
 
 $$
-C_{i,j} = \left|\{\,r : y_r = i \;\land\; \hat{y}_r = j\,\}\right|
+C_{i,j}=\sum_{r=1}^{n} I\!\left(y_r=i \wedge \hat{y}_r=j\right)
 $$
-### 🎨 Visualization Behavior
+
+### Visualization Behavior
 
 Each run plots a confusion matrix with a **randomly selected color palette** from:
 
