@@ -410,7 +410,7 @@ $$
 #### 1) Accuracy (Train + Test)
 
 $$
-\mathrm{Accuracy}=\frac{1}{n}\sum_{i=1}^{n}\mathbf{1}\!\left[\hat{y}_i=y_i\right]
+\mathrm{Accuracy}=\frac{1}{n}\sum_{i=1}^{n} I\!\left[\hat{y}_i=y_i\right]
 $$
 
 ---
